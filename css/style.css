@@ -1,0 +1,74 @@
+html *, body * {
+  line-height: 1.2em;
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  grid-area: 1/1/span 1/span 5;
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr repeat(6, 50px);
+}
+
+.contactInfo {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr repeat(6, 50px);
+  background-color: white;
+  visibility: hidden;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+.contactInfo h1 {
+  text-align: center;
+  text-transform: capitalize;
+}
+.contactInfo table {
+  width: 100%;
+  text-align: center;
+}
+.contactInfo table td {
+  width: 33%;
+}
+.contactInfo img {
+  margin: auto;
+}
+
+.closeButton {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.contacts {
+  display: grid;
+  grid-area: 2/1/span 1/span 5;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 10px;
+}
+.contacts .contact {
+  height: 50px;
+  text-transform: capitalize;
+  border: 1px solid #64be55;
+  border-radius: 10px;
+  text-align: center;
+  align-items: center;
+  display: inline-grid;
+  transition: background-color 0.2s ease-in-out;
+}
+.contacts .contact:hover {
+  background-color: #73cd5f;
+}
+
+/*# sourceMappingURL=style.css.map */
