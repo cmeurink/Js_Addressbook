@@ -4,71 +4,63 @@ html *, body * {
   padding: 0;
 }
 
-.title {
-  grid-area: 1/1/span 1/span 5;
-  text-align: center;
-}
-
 .container {
   display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr repeat(6, 50px);
+  grid-template-columns: 1fr 3fr;
+  background-color: lightblue;
 }
-
-.contactInfo {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr repeat(6, 50px);
+.container .userInfo {
   background-color: white;
-  visibility: hidden;
-  position: absolute;
-  left: 0px;
-  top: 0px;
+  border-right: 1px solid lightgray;
+}
+.container .userInfo img {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
-.contactInfo h1 {
-  text-align: center;
-  text-transform: capitalize;
-}
-.contactInfo table {
-  width: 100%;
-  text-align: center;
-}
-.contactInfo table td {
-  width: 33%;
-}
-.contactInfo img {
-  margin: auto;
-}
-
-.closeButton {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-}
-
-.contacts {
+.container .userInfo .info {
   display: grid;
-  grid-area: 2/1/span 1/span 5;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-  grid-gap: 10px;
+  grid-area: 1/2/span 1/span 2;
 }
-.contacts .contact {
-  height: 50px;
-  text-transform: capitalize;
-  border: 1px solid #64be55;
-  border-radius: 10px;
+.container .userInfo .info p {
+  justify-self: center;
+  align-self: center;
+}
+.container .userInfo .info h1 {
   text-align: center;
-  align-items: center;
-  display: inline-grid;
-  transition: background-color 0.2s ease-in-out;
+  text-transform: capitalize;
 }
-.contacts .contact:hover {
-  background-color: #73cd5f;
+.container .userInfo .info table {
+  text-align: center;
+}
+.container .contactContainer {
+  background-color: white;
+  margin: 0px 100px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-area: 2/1 span 1/span 4;
+}
+.container .contactContainer .contact {
+  text-transform: capitalize;
+  color: black;
+  text-decoration: none;
+  margin: 10px;
+  display: inline-grid;
+  grid-template-columns: 50px auto;
+  border-radius: 25px;
+}
+.container .contactContainer .contact img {
+  align-self: flex-start;
+  border-radius: 50%;
+}
+.container .contactContainer .contact p {
+  align-self: center;
+  justify-self: center;
+}
+.container .contactContainer .contact:hover {
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+  background-color: lightblue;
 }
 
 /*# sourceMappingURL=style.css.map */
