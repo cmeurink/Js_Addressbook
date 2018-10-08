@@ -8,19 +8,19 @@ function showAllItems () {
         return response.json();
     })
     .then(function(myJson) {    
-        console.log(myJson.results);
         for (let i = 0; i < myJson.results.length; i++) {
             const element = myJson.results[i];
             const link = `<a class='contact' onclick="getPersonFromLocalStorage('person${i}')" href=#><img src='${element.picture.thumbnail}' /><p>${element.name.first}  ${element.name.last}</p></a>`;
             contactDiv.innerHTML += link;
             localStorage.setItem(`person${i}`, JSON.stringify(element));
-            console.log(JSON.parse(localStorage.getItem(`person${i}`)));
         }
+        console.table(myJson.results[0]);
     });
 }
 
 function getPersonFromLocalStorage(id) {
     let person = JSON.parse(localStorage.getItem(id));
+    console.table(person.name);
     let userInfo = document.getElementById('userInfo');
     userInfo.innerHTML = "";
     userInfo.innerHTML += `
@@ -49,8 +49,5 @@ function getPersonFromLocalStorage(id) {
             </table>
         </div>
     `;
-    console.log(person);
-    
-    return person;
  }
 
