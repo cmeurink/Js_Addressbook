@@ -10,17 +10,41 @@ html, body {
     display: grid;
     grid-template-columns: 1fr 3fr;
     background-color: lightblue;
+
+    @media screen and (max-width: 900px){
+        display: block;
+        // grid-template-columns: 1fr;
+    }
     .userInfo{
         background-color: white;
         border-right: 1px solid lightgray;
+
+        @media screen and (max-width: 900px){
+            grid-area: 1/2;
+            display: none;
+        }
+        .UserInfoToggle{
+            z-index: 1000 !important;
+            display:none;
+            @media screen and (max-width: 900px){
+                display: block;
+                position: absolute;
+                top:10px;
+                right: 10px;
+            } 
+        }
         img{
             width: 100%;
             height: auto;
+            max-width: 500px;
+            margin: 0 auto;
             // display:grid;
             // grid-area: 1 / 1 / span 1 / span 1;
         }
         .info{
-            
+            @media screen and (max-width: 900px){
+                height: calc(100vh - 100vw);
+            }           
             display: grid;
             grid-area: 1 / 2 / span 1 / span 2;
             p{
@@ -44,6 +68,12 @@ html, body {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
         grid-area: 2 / 1 span 1 / span 4;
+
+        @media screen and (max-width: 900px){
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+        }
+
         .contact{
             text-transform: capitalize;
             color:black;
@@ -55,6 +85,8 @@ html, body {
             img{
                 align-self: flex-start;
                 border-radius:50%;
+                margin: 2px;
+               
             }
             p{
                 align-self: center;

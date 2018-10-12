@@ -22,9 +22,11 @@ function getPersonFromLocalStorage(id) {
     let person = JSON.parse(localStorage.getItem(id));
     console.table(person.name);
     let userInfo = document.getElementById('userInfo');
+    userInfo.style = "display: block;"
     userInfo.innerHTML = "";
     userInfo.innerHTML += `
-        <img src="${person.picture.large}" alt="Picture of person">
+        <img src="${person.picture.large}" alt="Picture of person"/>
+        <button id="toggleUserInfo" class="UserInfoToggle" onclick="toggleUserInfo()">X</button>
         <div class="info">
             <h1>${person.name.first} ${person.name.last}</h1>
             <table>
@@ -51,3 +53,7 @@ function getPersonFromLocalStorage(id) {
     `;
  }
 
+const toggleUserInfo = () => {
+    userInfo.style="display:none;"
+
+};
